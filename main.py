@@ -1,4 +1,4 @@
-from codec.elias import Elias_decode
+from codec.elias import Elias_decode, Elias_encode
 
 
 mode = input("Enter mode from list (enter number)\n\t"
@@ -6,7 +6,8 @@ mode = input("Enter mode from list (enter number)\n\t"
              "2. BIN ascii decode\n\t"
              "3. BIN array to DEC\n\t"
              "4. ASCII encode to DEC\n\t"
-             "5. BIN Elias code decode\n >> ")
+             "5. BIN Elias code decode\n\t"
+             "6. BIN Elias code encode\n >> ")
 
 
 if mode == '1':
@@ -27,5 +28,8 @@ elif mode == '4':
 elif mode == '5':
     arr = input("Enter data\n >> ").replace(" ", "")
     print(" <<", Elias_decode(arr))
+elif mode == '6':
+    arr = input("Enter data\n >> ").replace(" ", "")
+    print(" <<", Elias_encode(arr))
 else:
     print("can not parse run mode")

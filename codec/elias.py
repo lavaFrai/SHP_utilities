@@ -51,3 +51,27 @@ def Elias_decode(arr):
         arr.append(res[i:i + 8])
     arr = ''.join(list(map(lambda x: bytes([int(x, 2)]).decode('cp1251'), arr)))
     return arr
+
+
+def Elias_encode(arr):
+    arr = list(map(int, arr.encode('cp1251')))
+    arr = list(map(lambda x: (str(bin(x))[2:]).zfill(8), arr))
+    arr = ''.join(arr)
+    res = []
+    k, f = -1, arr[0]
+    for i in arr:
+        if i == f:
+            k += 1
+        else:
+            res.append(k + 1)
+            k = 0
+            f = i
+    res.append(k + 1)
+    key = arr[0]
+    arr = list(map(lambda x: str(bin(x))[2:], res))
+    for i in range(len(arr)):
+        while arr[i] not in ["1", "010", "011", "00100", "00101", "00110", "00111", "0001000", "0001001"]:
+            arr[i] = "0" + arr[i]
+    arr = [key] + arr
+    arr = ''.join(arr)
+    return arr
