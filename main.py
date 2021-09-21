@@ -3,7 +3,7 @@ mode = input("Enter mode from list (enter number)\n\t"
              "2. BIN ascii decode\n\t"
              "3. BIN array to DEC\n\t"
              "4. ASCII encode to DEC\n\t"
-             "5. BIN Elias code decode (not work)\n >> ")
+             "5. BIN Elias code decode\n >> ")
 
 
 if mode == '1':
