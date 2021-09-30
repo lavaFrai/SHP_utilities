@@ -1,4 +1,5 @@
 from codec.elias import Elias_decode, Elias_encode
+from codec.siberian import Siberian_decode, Siberian_encode, Siberian_index
 
 
 def com1():
@@ -40,3 +41,20 @@ def com6():
 def com7():
     arr = input("Enter data\n >> ")
     print(" <<", Elias_encode(arr))
+
+
+def com8():
+    arr = input("Enter data\n >> ").replace(" ", "")
+    print(" <<", Siberian_decode(arr))
+
+
+def com9():
+    arr = input("Enter data\n >> ").replace(" ", "")
+    print(" <<", Siberian_encode(arr))
+
+
+def com10():
+    for i in range(7):
+        for j in range(7):
+            print(Siberian_index(i, j), end='\t')
+        print()
