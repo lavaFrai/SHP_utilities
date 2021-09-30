@@ -21,7 +21,7 @@ def Siberian_index(a, b):
 #       B2+2*C$1))
 
 
-def Siberian_decode(data):
+def Siberian_encode(data):
     a = len(data)
     if a == 0:
         return ""
@@ -38,16 +38,28 @@ def Siberian_decode(data):
     return "".join(res)
 
 
-def Siberian_encode(data):
-    a = len(data)
-    if a == 0:
-        return ""
-    b, k = 0, 0
-    print("Input data len:", a)
-    while b < a:
-        k += 1
-        b = (k * (k + 1)) / 2
-    b = int(b)
-    print("Sizeof cone:", b)
+def SibF(x):
+    x *= 2
+    n = -1 + ((1 + 4 * x) ** 0.5) / 2
+    return int(n + 0.5)
 
-    return
+
+def Siberian_decode(data):
+    a = len(data)
+    tmp = []
+    k = 0
+    # print("Data len:", a)
+
+    for i in range(SibF(a), 0, -1):
+        # print(i, k)
+        tmp.append(data[k:k+i])
+        k += i
+    res = []
+    for i in range(len(tmp)):
+        for j in range(len(tmp[i])):
+            # print(Siberian_index(i, j), end='\t')
+            res.append([tmp[i][j], Siberian_index(i, j)])
+        # print()
+    res.sort(key=lambda x: x[1])
+    res = map(lambda x: x[0], res)
+    return "".join(res)
