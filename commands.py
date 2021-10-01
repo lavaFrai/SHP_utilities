@@ -1,5 +1,6 @@
 from codec.elias import Elias_decode, Elias_encode
-from codec.siberian import Siberian_decode, Siberian_encode, Siberian_index, SibF
+from codec.siberian import Siberian_decode, Siberian_encode
+from codec.systems import convert_numerical_system
 
 
 def com1():
@@ -13,7 +14,9 @@ def com2():
 
 
 def com3():
-    arr = list(map(lambda x: str(int(x, 2)), input("Enter data\n >> ").split()))
+    from_base = int(input("Enter from base\n >> "))
+    to_base = int(input("Enter to base\n >> "))
+    arr = list(map(lambda x: convert_numerical_system(x, to_base, from_base), input("Enter data\n >> ").split()))
     print(" <<", " ".join(arr))
 
 
