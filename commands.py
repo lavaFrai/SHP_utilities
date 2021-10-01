@@ -54,4 +54,4 @@ def com9():
 
 
 def com10():
-    print(Siberian_decode("про  отп сртиев"))
+    print(Siberian_decode("Про  отп сртиев"))

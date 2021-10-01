@@ -12,6 +12,12 @@ def Siberian_index(a, b):
         else:
             return Siberian_index(a, b - 1) + (2 * b)
 
+
+def SibF(x):
+    x *= 2
+    n = -1 + ((1 + 4 * x) ** 0.5) / 2
+    return int(n + 0.5)
+
 # =ЕСЛИ(C$1=0;
 #   ЕСЛИ(ОСТАТ($A2;2)=0;
 #       C1+1;
@@ -26,25 +32,38 @@ def Siberian_encode(data):
     if a == 0:
         return ""
     b, k = 0, 0
-    print("Input data len:", a)
+    # print("Input data len:", a)
     while b < a:
         k += 1
         b = (k * (k + 1)) / 2
     b = int(b)
-    print("Sizeof cone:", b)
+    # print("Sizeof cone:", b)
+    data += ' ' * (b - a)
+    # print("First line size:", SibF(b))
     res = []
-    for i in range(a):
-        pass
+    k = 0
+    for i in range(SibF(b), 0, -1):
+        res.append([' ' for j in range(i)])
+    for i in range(len(res)):
+        for j in range(len(res[i])):
+            res[i][j] = data[Siberian_index(i, j)]
+    # for i in res:
+    #     print(i)
+    res = map(lambda x: ''.join(x), res)
     return "".join(res)
 
 
-def SibF(x):
-    x *= 2
-    n = -1 + ((1 + 4 * x) ** 0.5) / 2
-    return int(n + 0.5)
-
-
 def Siberian_decode(data):
+    b = 0
+    k = 0
+    while b < len(data):
+        k += 1
+        b = (k * (k + 1)) / 2
+    b = int(b)
+    data += ' ' * (b - len(data))
+    b = 0
+    k = 0
+
     a = len(data)
     tmp = []
     k = 0
