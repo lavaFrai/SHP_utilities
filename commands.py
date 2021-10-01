@@ -60,5 +60,5 @@ def com9():
 def com10():
     from_base = int(input("Enter from base\n >> "))
     to_base = int(input("Enter to base\n >> "))
-    arr = list(map(lambda x: codec.numsys.rebase(x,  from_base, to_base), input("Enter data\n >> ").split()))
+    arr = list(map(lambda x: codec.numsys.rebase(x.upper(),  from_base, to_base), input("Enter data\n >> ").split()))
     print(" <<", " ".join(arr))
