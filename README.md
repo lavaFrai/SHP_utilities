@@ -23,4 +23,4 @@ That's all, type this in shel and enjoy the program!
 In case you find a bug, you can contact me in the following ways:
  - **[e-mail: vladimirkurdiukov@gmail.com](mailto:vladimirkurdiukov@gmail.com)**
  - **[VK: @lava_frai](https://vk.com/lava_frai)**
- - **[discord: lava_frai#0498](https://discordapp.com/users/lava_frai#0498)**
+ - **[discord: lava_frai#0498](https://discordapp.com/users/677933625802489889)**
