@@ -1,6 +1,7 @@
 from codec.elias import Elias_decode, Elias_encode
 from codec.siberian import Siberian_decode, Siberian_encode
 from codec.systems import convert_numerical_system
+import codec.numsys.__init__
 
 
 def com1():
@@ -57,4 +58,7 @@ def com9():
 
 
 def com10():
-    print(Siberian_decode("Про  отп сртиев"))
+    from_base = int(input("Enter from base\n >> "))
+    to_base = int(input("Enter to base\n >> "))
+    arr = list(map(lambda x: codec.numsys.rebase(x,  from_base, to_base), input("Enter data\n >> ").split()))
+    print(" <<", " ".join(arr))
