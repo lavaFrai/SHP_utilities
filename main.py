@@ -13,7 +13,12 @@ print("Enter mode from list (enter number)\n\t"
       "9. Siberian code encode\n\t"
       "10. numsys Numerical System convert\n")
 
-try:
-    exec("com" + str(input(" >> ")) + "()")
-except NameError:
-    print("can not parse run mode")
+while True:
+    try:
+        exec("com" + str(input(" >> ")) + "()")
+    except NameError:
+        print("can not parse run mode")
+    except BaseException as e:
+        print("Unhandled Execution Exception:", str(e))
+        print("Report this to the developer or check the entered data.")
+    print()
