@@ -1,7 +1,11 @@
 from codec.elias import Elias_decode, Elias_encode
-from codec.siberian import Siberian_decode, Siberian_encode
+from codec.siberian import Siberian_decode, Siberian_decode2, Siberian_encode
 from codec.systems import convert_numerical_system
 import codec.numsys.__init__
+
+
+def comexit():
+    exit(0)
 
 
 def com1():
@@ -50,6 +54,11 @@ def com7():
 def com8():
     arr = input("Enter data\n >> ")
     print(" <<", Siberian_decode(arr))
+
+
+def com8A():
+    arr = input("Enter data\n >> ")
+    print(" <<", Siberian_decode2(arr))
 
 
 def com9():

@@ -1,7 +1,10 @@
 # SHP_utilities
 
-### How to use:
+### What is it?
+This is a program that allows you not to waste time solving the same type of tasks, as it will do it for you!
+We collect tasks that are often found in schools and teach our program to solve them in order to save time.
 
+### How to use:
 #### Linux
 ```shell
 git clone "https://github.com/lavaFrai/SHP_utilities"

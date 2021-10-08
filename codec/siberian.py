@@ -82,3 +82,35 @@ def Siberian_decode(data):
     res.sort(key=lambda x: x[1])
     res = map(lambda x: x[0], res)
     return "".join(res)
+
+
+def Siberian_decode2(data):
+    b = 0
+    k = 0
+    while b < len(data):
+        k += 1
+        b = (k * (k + 1)) / 2
+    b = int(b)
+    data += ' ' * (b - len(data))
+    b = 0
+    k = 0
+
+    a = len(data)
+    tmp = []
+    k = 0
+    # print("Data len:", a)
+
+    for i in range(SibF(a), 0, -1):
+        # print(i, k)
+        tmp.append(data[k:k+i])
+        k += i
+    res = []
+    for i in range(len(tmp)):
+        for j in range(len(tmp[i])):
+            # print(Siberian_index(i, j), end='\t')
+            res.append([tmp[i][j], Siberian_index(i, j)])
+        # print()
+    res.sort(key=lambda x: x[1])
+    res = map(lambda x: x[0], res)
+    return "".join(res)
+
