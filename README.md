@@ -22,6 +22,14 @@ python main.py
 
 That's all, type this in shel and enjoy the program!
 
+
+### What we can:
+ - [x] Numeric system's translations
+ - [x] ASCII table (encode/decode)
+ - [x] Elias code (encode/decode)
+ - [x] Siberian code (encode/decode)
+
+
 ### If you found an error:
 In case you find a bug, you can contact me in the following ways:
  - **[e-mail: vladimirkurdiukov@gmail.com](mailto:vladimirkurdiukov@gmail.com)**
